@@ -16,8 +16,6 @@ dates = {
     'december':'12'
 }
 
-keepGoing = True
-
 inputPath = input("Enter path: ")
 path = r"" + inputPath
 
@@ -29,7 +27,7 @@ fileName = os.listdir(path)
 
 keepGoing = input("Sort files (y/n)? ")
 
-while keepGoing == 'y':
+while keepGoing == 'y' or keepGoing == 'yes':
     
     month = input("Enter month: ").lower()
     year = input("Enter year: ")
@@ -47,4 +45,4 @@ while keepGoing == 'y':
              shutil.move(path + "/" + file, path + "/" + month + " " + year + "/" + file)
 
     print("Files sorted.\n")
-    keepGoing = input("Continue sorting? (y/n) ")
+    keepGoing = input("Continue sorting? (y|n) ").lower()
